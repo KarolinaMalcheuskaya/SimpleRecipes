@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Recipe
+{% endblock %}
+
+
+{% block content %}
+<div class="content-md container">
+    <div class="row align-items-center">
+        <div class="col"></div>
+        <div class="col">
+                      
+            {% if recipe %}
+                <h1>{{ recipe.title }}</h1>
+                <h3>{{ recipe.products }}</h3>
+                <h3>{{ recipe.cooking }}</h3>
+                {% if recipe.image %}
+                    <img class="item-image" src="{{ recipe.image.url }}" />
+                {% endif %}
+                <p>by {{ recipe.the_author.name }}</p>
+                {% else %}
+                <h3>we cannot find the recipe you're looking for</h3>
+            {% endif %}
+        </div>
+        <h4>Reviews</h4>
+        {% for com in comment %}
+            {{ com.content }}<br>
+            <p>by {{ com.author.name }}</p><br><br>
+        {% endfor %}
+        
+        <div style="margin-top: 30px;">
+            {% if user.is_authenticated %}
+                
+                <div>
+                    <form action="" method="post" style="display: table-caption;">
+                        {% csrf_token %}
+                        <div class="comform">
+                            {{ form.content.label_tag }}
+                            {{ form.content }}
+                        </div>
+                        <input type="submit" value="Add my review" style="margin-left: 90px;">
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="col"> </div>
+    </div>
+</div>
+{% endblock %}

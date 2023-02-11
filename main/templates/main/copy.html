@@ -1,0 +1,119 @@
+import datetime
+from django.shortcuts import render, redirect
+from .models import Review, Author, Recipe
+from .forms import AddReview, AddRecipe
+
+def home(request):
+    return render(request, 'main/home.html')
+
+
+def reviews(request):
+    all_reviews = Review.objects.all().order_by('-issued')
+    return render(request, 'main/reviews.html', {'reviews': all_reviews})
+
+def review(request, id):
+    try:
+        review = Review.objects.get(id=id)
+    except:
+        review = ""
+    return render(request, 'main/review.html', {'review': review})
+
+
+def add_review(request):
+    if request.method == "POST":
+        new_form = AddReview(request.POST, request.FILES)
+        
+        if new_form.is_valid():
+            review = Review()
+            review.author = Author.objects.all()[0]
+            review.issued = datetime.datetime.now()
+            review.content = new_form.cleaned_data['content']
+            review.save()
+
+            return redirect('reviews')
+            
+    else:
+        new_form = AddReview()
+
+    return render(request, 'main/add_review.html', {'new_form': new_form})
+           
+
+def recipes(request):
+    all_recipes = Recipe.objects.all().order_by('-time')
+    return render(request, 'main/recipes.html', {'recipes': all_recipes})
+
+def recipe(request, id):
+    try:
+        recipe = Recipe.objects.get(id=id)
+    except:
+        recipe = ""
+    return render(request, 'main/recipe.html', {'recipe': recipe})
+
+
+    
+
+def add_recipe(request):
+    if request.method == "POST":
+        new_form = AddRecipe(request.POST, request.FILES)
+        
+        if new_form.is_valid():
+            recipe = Recipe()
+            recipe.the_author = Author.objects.all()[0]
+            recipe.title = new_form.cleaned_data['title']
+            recipe.products = new_form.cleaned_data['products']
+            recipe.cooking = new_form.cleaned_data['cooking']
+            recipe.time = datetime.datetime.now()
+            recipe.image = new_form.cleaned_data['image']
+            recipe.save()
+
+            return redirect('recipes')
+            
+    else:
+        new_form = AddRecipe()
+
+    return render(request, 'main/add.html', {'new_form': new_form})
+
+
+
+
+    class AddRecipe(forms.Form):
+    title = forms.CharField(max_length=100)
+    products = forms.CharField(widget=forms.Textarea())
+    cooking = forms.CharField(widget=forms.Textarea())
+    image = forms.ImageField()
+
+    
+    
+    def recipes(request):
+    search_query = request.GET.get('search','')
+    if search_query:
+        all_recipes=Recipe.objects.filter(Q(title__icontains=search_query) | Q(products__icontains=search_query))
+    else:
+        all_recipes = Recipe.objects.all().order_by('-time')
+        messages.error(request, 'Nothing found for your request')
+
+    return render(request, 'main/recipes.html', {'recipes': all_recipes})
+
+
+    def recipes(request):
+    search_query = request.GET.get('search','')
+    if search_query:
+        all_recipes=Recipe.objects.filter(Q(title__icontains=search_query) | Q(products__icontains=search_query))
+    else:
+        all_recipes = Recipe.objects.all().order_by('-time')
+        messages.error(request, 'Nothing found for your request')
+       
+
+    return render(request, 'main/recipes.html', {'recipes': all_recipes})
+    
+
+
+    {% if search_query %}
+    {% for message in messages %}
+        {% if message.tags == 'error' %}
+            <div class="alert alert-danger" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}

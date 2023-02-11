@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Recipes
+{% endblock %}
+
+
+{% block content %}
+<div class="content-md container">
+    <div class="row">
+        <div class="col-sm-12" style="display:flex; flex-direction: column; align-items: flex-start; margin-top: 20px;">
+            <div class="add">
+                                              
+                {% for recipe in recipes %}
+                    <a href="{% url 'recipe' recipe.id %}">
+                        <h2><u>{{ recipe.title }}</u></h2>
+                    </a>
+                    <h3> {{ recipe.products }}</h3>
+                    <h3>{{ recipe.cooking }}</h3>
+                    {% if recipe.image %}
+                        <img src="{{ recipe.image.url }}"/>
+                    {% endif %}
+                    <p>by {{ recipe.the_author.name }} </p> <hr>
+                {% endfor %}
+
+            </div>
+                        
+        </div>
+        
+    </div>
+</div>   
+
+{% endblock %}

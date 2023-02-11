@@ -1,0 +1,377 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Simple recipes
+{% endblock %}
+
+
+{% block content %}
+<div class="promo-block">
+    <div class="container">
+        <div class="margin-b-40">
+            <h1 class="promo-block-title">Welcome to my culinary page</h1>
+            <p class="promo-block-text">Let's cook delicious food together.</p>
+        </div>
+    </div>
+</div>
+      
+<!--========== PAGE LAYOUT ==========-->
+        
+<div id="recipes">
+    <div class="container content-lg">
+        <div class="row text-center margin-b-40">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h2>Some recipes</h2>
+                <p>Home baking creates an indescribable atmosphere of comfort and warmth in the house.</p>
+            </div>
+        </div>
+        <div class="row">
+             <!-- Latest Products -->
+            <div class="col-sm-4 sm-margin-b-50">
+                <div class="margin-b-20">
+                    <img class="img-responsive wow fadeIn" src="{% static 'main/img/970x647/1.jpg' %}" alt="muffins" data-wow-duration=".3" data-wow-delay=".1s"/>
+                </div>
+                    <h4>Let's cook <span class="text-uppercase margin-l-20">Сheese muffins</span></h4>
+                    <p>Quick and juicy cheese buns for your morning coffee! Quick and easy to prepare, very juicy due to the melted cheese inside. Can be served hot or eaten cold.</p>
+                    <a class="link" href="#work">Read More</a>
+            </div>
+            <div class="col-sm-4 sm-margin-b-50">
+                <div class="margin-b-20">
+                    <img class="img-responsive wow fadeIn" src="{% static 'main/img/970x647/2.jpg' %}" alt="mannik" data-wow-duration=".3" data-wow-delay=".2s"/>
+                </div>
+                    <h4>Let's cook<span class="text-uppercase margin-l-20">Mannik</span></h4>
+                    <p>Let's cook mannik without flour, on kefir - this is a delicious and homemade pastry that every hostess can do. Mannik turns out very tender and tasty</p>
+                    <a class="link" href="#work">Read More</a>
+                    
+            </div>
+            <div class="col-sm-4 sm-margin-b-50">
+                <div class="margin-b-20">
+                    <img class="img-responsive wow fadeIn" src="{% static 'main/img/970x647/3.jpg' %}" alt="Cake" data-wow-duration=".3" data-wow-delay=".3s"/>
+                </div>
+                    <h4>Let's cook<span class="text-uppercase margin-l-20">Berry pie</span></h4>
+                    <p>I want to offer a recipe for a quick, tasty, juicy shortbread pie with a filling of frozen berries. The pie cooks very quickly. Great cake for a delicious tea party!</p>
+                    <a class="link" href="#work">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+                         
+<!-- End Products -->
+<!-- Promo Banner -->
+<div class="promo-banner">
+    <div class="container-sm content-lg">
+        <h2 class="promo-banner-title">Join me, it's delicious</h2>
+        <p class="promo-banner-text">Everyone, even a novice cook, will find simple baking recipes. Let's not forget about recipes that will help you create simply delicious delicacies in the kitchen again and again.</p>
+    </div>
+</div>
+<!-- End Promo Banner -->
+<!-- Work -->
+<div id="work">
+    <div class="content-md container">
+        <!-- Masonry Grid -->
+        <div class="masonry-grid row row-space-2">
+            <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
+                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8 margin-b-4">
+                    <!-- Work -->
+                    <div class="work work-popup-trigger">
+                        <div class="work-overlay">
+                            <img class="full-width img-responsive" src="{% static 'main/img/800x400/1.jpg' %}" alt=""/>
+                        </div>
+                        <div class="work-popup-overlay">
+                            <div class="work-popup-content">
+                                <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                <div class="margin-b-30">
+                                    <h3 class="margin-b-5">Chocolate oatmeal cookies</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p>Mix oat flakes with eggs and sugar. Beat everything with a mixer. Then add flour, baking powder, soda, butter and cocoa - mix well.</p>
+                                            <p>Bake at 180 degrees for 20 minutes</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p class="margin-b-5"><strong>We're going to need:</strong></p>
+                                            <p class="margin-b-5"><strong>120 grams oat flakes</strong></p>
+                                            <p class="margin-b-5"><strong>3 aggs</strong></p>
+                                            <p class="margin-b-5"><strong>3-4 tablespoons of sugar</strong></p>
+                                            <p class="margin-b-5"><strong>60 grams of butter</strong></p>
+                                            <p class="margin-b-5"><strong>4 tablespoons flour</strong></p>
+                                            <p class="margin-b-5"><strong>1 teaspoon baking powder</strong></p>
+                                            <p class="margin-b-5"><strong>0.5 teaspoon soda</strong></p>
+                                            <p class="margin-b-5"><strong>3 tablespoons cocoa</strong></p>
+                                            <p><strong>Let's cook</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Work -->
+                </div>
+                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
+                    <!-- Work -->
+                    <div class="work work-popup-trigger">
+                        <div class="work-overlay">
+                            <img class="full-width img-responsive" src="{% static 'main/img/397x400/1.jpg' %}" alt=""/>
+                        </div>
+                        <div class="work-popup-overlay">
+                            <div class="work-popup-content">
+                                <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                <div class="margin-b-30">
+                                    <h3 class="margin-b-5">Сrepes</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p>Mix eggs, sugar, salt. Add 100-150 ml of milk to the egg mass - mix. Add flour - mix. Add remaining milk and mix well. </p>
+                                            <p>Fry in a hot pan.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p class="margin-b-5"><strong>We're going to need:</strong></p>
+                                            <p class="margin-b-5"><strong>3 eggs</strong></p>
+                                            <p class="margin-b-5"><strong>30 grams of sugar</strong></p>
+                                            <p class="margin-b-5"><strong>30 grams of butter</strong></p>
+                                            <p class="margin-b-5"><strong>200 grams of flour</strong></p>
+                                            <p class="margin-b-5"><strong>500 grams of milk</strong></p>
+                                            <p class="margin-b-5"><strong>0.5 teaspoon salt</strong></p>
+                                            <p><strong>Let's cook</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Work -->
+                </div>
+                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
+                    <!-- Work -->
+                    <div class="work work-popup-trigger">
+                        <div class="work-overlay">
+                            <img class="full-width img-responsive" src="{% static 'main/img/397x300/2.jpg' %}" alt=""/>
+                        </div>
+                        <div class="work-popup-overlay">
+                            <div class="work-popup-content">
+                                <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                <div class="margin-b-30">
+                                    <h3 class="margin-b-5">Charlotte with apples</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p>Beat eggs with sugar well with a mixer. Add flour - mix gently.
+                                                Pour into the form. Place apple slices on top.</p>
+                                            <p>Bake for 30 minutes at 180 degrees</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p class="margin-b-5"><strong>We're going to need:</strong></p>
+                                            <p class="margin-b-5"><strong>4 eggs</strong></p>
+                                            <p class="margin-b-5"><strong>4 apples</strong></p>
+                                            <p class="margin-b-5"><strong>30 grams of sugar</strong></p>
+                                            <p class="margin-b-5"><strong>160 grams of flour</strong></p>
+                                             
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Work -->
+                </div>
+                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
+                    <!-- Work -->
+                    <div class="work work-popup-trigger">
+                        <div class="work-overlay">
+                            <img class="full-width img-responsive" src="{% static 'main/img/397x300/3.jpg' %}" alt=""/>
+                        </div>
+                        <div class="work-popup-overlay">
+                            <div class="work-popup-content">
+                                <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                <div class="margin-b-30">
+                                    <h3 class="margin-b-5">Chocolate pie</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p>Beat eggs with sugar. Add butter, flour, baking powder, cocoa - mix well.</p>
+                                            <p>Bake for 40 minutes at 180 degrees</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p class="margin-b-5"><strong>We're going to need:</strong></p>
+                                            <p class="margin-b-5"><strong>4 eggs</strong></p>
+                                            <p class="margin-b-5"><strong>150 grams of sugar</strong></p>
+                                            <p class="margin-b-5"><strong>100 grams of vegetable oil</strong></p>
+                                            <p class="margin-b-5"><strong>160 grams of flour</strong></p>
+                                            <p class="margin-b-5"><strong>2 tablespoons cocoa</strong></p>
+                                            <p class="margin-b-5"><strong>2 teaspoon baking powder</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Work -->
+                </div>
+                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
+                    <!-- Work -->
+                    <div class="work work-popup-trigger">
+                        <div class="work-overlay">
+                            <img class="full-width img-responsive" src="{% static 'main/img/397x300/4.jpg' %}" alt=""/>
+                        </div>
+                        <div class="work-popup-overlay">
+                            <div class="work-popup-content">
+                                <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                <div class="margin-b-30">
+                                    <h3 class="margin-b-5">Mannik</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p>Mix semolina with kefir. Beat well. Add eggs - beat with a mixer. Let stand 5-7 minutes.
+                                                Add butter, sugar, flour, baking powder - mix well</p>
+                                            <p>Bake for 30 minutes at 180 degrees</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p class="margin-b-5"><strong>We're going to need:</strong></p>
+                                            <p class="margin-b-5"><strong>3 eggs</strong></p>
+                                            <p class="margin-b-5"><strong>100 grams of sugar</strong></p>
+                                            <p class="margin-b-5"><strong>100 grams of vegetable oil</strong></p>
+                                            <p class="margin-b-5"><strong>200 grams of semolina</strong></p>
+                                            <p class="margin-b-5"><strong>200 grams of kefir</strong></p>
+                                            <p class="margin-b-5"><strong>1 teaspoon baking powder</strong></p>
+                                            <p class="margin-b-5"><strong>70 grams of flour</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Work -->
+                </div>
+                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
+                    <!-- Work -->
+                    <div style="margin-top: 3px;" class="work work-popup-trigger">
+                        <div class="work-overlay">
+                            <img class="full-width img-responsive" src="{% static 'main/img/397x300/5.jpg' %}" alt=""/>
+                        </div>
+                        <div class="work-popup-overlay">
+                            <div class="work-popup-content">
+                                <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                <div class="margin-b-30">
+                                    <h3 class="margin-b-5">Berry pie</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p>Mix all ingredients. Pour the dough into a mold, sprinkle with any berries on top.</p>
+                                            <p>Bake for 30 minutes at 180 degrees</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p class="margin-b-5"><strong>We're going to need:</strong></p>
+                                            <p class="margin-b-5"><strong>100 grams of flour</strong></p>
+                                            <p class="margin-b-5"><strong>140 grams of sugar</strong></p>
+                                            <p class="margin-b-5"><strong>110 grams of butter</strong></p>
+                                            <p class="margin-b-5"><strong>2 eggs</strong></p>
+                                            <p class="margin-b-5"><strong>vanilla</strong></p>
+                                            <p class="margin-b-5"><strong>1 teaspoon baking powder</strong></p>
+                                            <p class="margin-b-5"><strong>any berries</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Work -->
+                </div>
+                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
+                    <!-- Work -->
+                    <div style="margin-top: 3px;" class="work work-popup-trigger">
+                        <div class="work-overlay">
+                            <img class="full-width img-responsive" src="{% static 'main/img/397x300/6.jpg' %}" alt=""/>
+                        </div>
+                        <div class="work-popup-overlay">
+                            <div class="work-popup-content">
+                                <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                <div class="margin-b-30">
+                                    <h3 class="margin-b-5">Сheese muffins</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p>Mix all ingredients. Divide into molds.</p>
+                                            <p>Bake for 15-20 minutes at 180 degrees</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p class="margin-b-5"><strong>We're going to need:</strong></p>
+                                            <p class="margin-b-5"><strong>2 eggs</strong></p>
+                                            <p class="margin-b-5"><strong>80 grams of cheese</strong></p>
+                                            <p class="margin-b-5"><strong>2 tablespoons flour</strong></p>
+                                            <p class="margin-b-5"><strong>2 tablespoons sour cream</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Work -->
+                </div>
+                <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
+                    <!-- Work -->
+                    <div style="margin-top: 3px;" class="work work-popup-trigger">
+                        <div class="work-overlay">
+                            <img class="full-width img-responsive" src="{% static 'main/img/397x300/7.jpg' %}" alt=""/>
+                        </div>
+                        <div class="work-popup-overlay">
+                            <div class="work-popup-content">
+                                <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                                <div class="margin-b-30">
+                                    <h3 class="margin-b-5">Сottage cheese pancakes</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p>Mix all ingredients. Divide into molds.</p>
+                                            <p>Bake for 15-20 minutes at 180 degrees</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="margin-t-10 sm-margin-t-0">
+                                            <p class="margin-b-5"><strong>We're going to need:</strong></p>
+                                            <p class="margin-b-5"><strong>2 eggs</strong></p>
+                                            <p class="margin-b-5"><strong>80 grams of cheese</strong></p>
+                                            <p class="margin-b-5"><strong>2 tablespoons flour</strong></p>
+                                            <p class="margin-b-5"><strong>2 tablespoons sour cream</strong></p>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Work -->
+                </div>
+            </div>
+            <!-- End Masonry Grid -->
+        </div>
+    </div>
+    <!-- End Work -->
+
+{% endblock %}
+
+
+       

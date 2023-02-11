@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Add review
+{% endblock %}
+
+
+{% block content %}
+<div class="container text-center" style="margin-top:125px; margin-bottom:30px; min-height: 500px">
+    <div class="row">
+        <div class="col order-last"> </div>
+        <div class="col">
+            <h2 class="add" >Add your review here:</h2>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ new_form.as_p }}
+                <button type="submit">Leave my review</button>
+            </form>
+        </div>
+        <div class="col order-first"></div>
+    </div>
+</div>
+
+{% endblock %}

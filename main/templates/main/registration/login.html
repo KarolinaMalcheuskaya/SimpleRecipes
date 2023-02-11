@@ -1,0 +1,50 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Log In
+{% endblock %}
+
+{% block content %}
+<div class="container text-center" style="margin-top:125px; margin-bottom:30px; min-height: 550px">
+    <div class="row">
+        <div class="col order-last"> </div>
+        <div class="col">
+            {% if form.errors %}
+                <p>Your username and password didn't match. Please try again.</p>
+            {% endif %}
+  
+            {% if next %}
+                {% if user.is_authenticated %}
+                    <p>Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
+                {% else %}
+                    <p>Please login to see this page.</p>
+                {% endif %}
+            {% endif %}
+            <fieldset class="reg">
+                <form method="POST" action = "{%  url 'login' %}">
+                    {% csrf_token %}
+                    <div class="form_username">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                    </div>
+                    <div class="form_style">
+                        {{ form.password.label_tag }}
+                        {{ form.password }} 
+                    </div>
+                    <input type="submit" value="login"  />
+                    <input type="hidden" name="next" value="{{ next }}" />
+                </form>
+            </fieldset>
+        </div>
+        <div class="col order-first"></div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Add recipe
+{% endblock %}
+
+
+{% block content %}
+<div class="container text-center" style="margin-top:110px; margin-bottom:30px;">
+    <div class="row">
+        <div class="col order-last"> </div>
+        <div class="col">
+            <h2 class="add">Add your recipe here:</h2>
+            <form method="POST" enctype="multipart/form-data"  class="form_style_add">
+                {% csrf_token %}
+                <div  class="form-title">
+                    {{ new_form.title.label_tag }}
+                    {{ new_form.title }}
+                </div>
+                <div class="form_prod">
+                    {{ new_form.products.label_tag }}
+                    {{ new_form.products }}
+                </div>
+                <div class="form-cook">
+                    {{ new_form.cooking.label_tag }}
+                    {{ new_form.cooking }}
+                </div>
+                <div  class="form-image">
+                    {{ new_form.image.label_tag }}
+                    {{ new_form.image }}
+                </div>
+                <input type="submit" value="Add my recipe"  class="input-recipe">
+            </form>
+        </div>
+        <div class="col order-first"></div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

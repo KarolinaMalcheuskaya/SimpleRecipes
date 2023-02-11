@@ -1,0 +1,60 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Register
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="container text-center" style="margin-top:140px; margin-bottom:50px; min-height: 550px;">
+    <div class="row">
+        <div class="col order-last"> </div>
+        <div class="col" >
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'error' %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ message }}
+                        </div>
+                    {% else %}
+                        <div class="alert alert-{{ message.tags }}" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            
+                <form method="POST" action = "{%  url 'register' %}" class="form_style_add">
+                    {% csrf_token %}
+                    <div class="form_style">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                    </div>
+                    <div class="form_style" style="margin-left:47px">
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                    </div>
+                    <div class="form_style">
+                        {{ form.password1.label_tag }}
+                        {{ form.password1 }}
+                    </div>
+                    <div class="form_style" style="margin-left:-45px; font-size: 14px; padding-left: 25px;">
+                        {{ form.password2.label_tag }}
+                        {{ form.password2 }}
+                    </div>
+
+                    <input type="submit" value="Register" style="margin-bottom: 10px; font-size:18px;"/>
+                    <input type="hidden" name="next" value="{{ next }}" />
+                </form>
+            
+        </div>
+        <div class="col order-first"></div>
+    </div>
+</div>
+
+
+{% endblock %}
